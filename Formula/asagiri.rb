@@ -11,18 +11,18 @@ class Asagiri < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/LaProgrammerie/asagiri/releases/download/v0.1.0-alpha.1/asa_0.1.0-alpha.1_darwin_amd64.tar.gz"
-      sha256 "7935cae4ae2db7899fc1e88c9d6d09520dab5c11ee8660c5eba2f75ef2adc919"
+      sha256 "9e0e305953d148b6114ac96cadb5300d0dc1249abd8c6f645ee588cba83e49d5"
 
       define_method(:install) do
-        bin.install "asa"
+        bin.install "asa" => "asagiri"
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/LaProgrammerie/asagiri/releases/download/v0.1.0-alpha.1/asa_0.1.0-alpha.1_darwin_arm64.tar.gz"
-      sha256 "3c35bfcf2d66bf94e30f40c1f9f4e4e83ee06e8ecdee5f1b43a9db68764686fb"
+      sha256 "ca704656bb0c2afb8ead7219105e3fc68309f698940d6aef07a5846771a41e20"
 
       define_method(:install) do
-        bin.install "asa"
+        bin.install "asa" => "asagiri"
       end
     end
   end
@@ -30,21 +30,21 @@ class Asagiri < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/LaProgrammerie/asagiri/releases/download/v0.1.0-alpha.1/asa_0.1.0-alpha.1_linux_amd64.tar.gz"
-      sha256 "62a837d9ccddd496fbc59f931e4c58625ffc66fd2a02962a35ca127c4704b57f"
+      sha256 "cb3048b47ddc0a91488ecdb7d1429da1b4196bee42aa68886439484c923c14db"
       define_method(:install) do
-        bin.install "asa"
+        bin.install "asa" => "asagiri"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/LaProgrammerie/asagiri/releases/download/v0.1.0-alpha.1/asa_0.1.0-alpha.1_linux_arm64.tar.gz"
-      sha256 "77bbf63a65671c25e0bca05d05aa45214b615b82be359103ff6e9e61014f44a1"
+      sha256 "25e6bfb65ff044eeed8a3702984d76d7fb6a932b8c487e4c49e0f0aa25c3c44a"
       define_method(:install) do
-        bin.install "asa"
+        bin.install "asa" => "asagiri"
       end
     end
   end
 
   test do
-    system "#{bin}/asa", "version"
+    system "#{bin}/asagiri", "version"
   end
 end
